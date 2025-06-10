@@ -1,0 +1,75 @@
+// gold catalogs should be excluded
+// group size > 2000 should be excluded 
+// give the row for which 
+//     ---> product is valid
+//     ---> supplier is valid 
+//     ---> catalog is valid 
+//     ---> supplier_product_map is valid
+//     ---> inventory > 0 
+
+{
+    "g_id1": {
+        "p1": {
+            "product_id": 0,
+            "supplier_id": 0,
+            "sscat_id": 0,
+            "catalog_id": 0,
+            "is_available": 0,
+            "normal_price": 0,
+            "ObyV": 0,
+            "net_ObyV": 0,
+            "catalog_rating_count": 0,
+            "catalog_avg_rating": 0,
+            "explore_score": 0,
+            "prediction": 0,
+            "nqd": 0,
+            "rank_new": 0,
+            "lt_nqd_supplier": 0,
+            "nqd_supplier": 0,
+            "lt_ratings_supplier": 0,
+            "lt_nqd_catalog": 0,
+            "3m_cnt_catalog": 0,
+            "nqd_catalog": 0,
+            "lt_ratings_catalog": 0,
+            "predict_catalog_nqd": 0,
+            "relaxed_group_id": 0,
+            "supplier_lt_count_rating": 0,
+            "supplier_lt_avg_rating": 0
+        },
+        "p2": {
+            "product_id": 0,
+            "supplier_id": 0,
+            "sscat_id": 0,
+            "catalog_id": 0,
+            "is_available": 0,
+            "normal_price": 0,
+            "ObyV": 0,
+            "net_ObyV": 0,
+            "catalog_rating_count": 0,
+            "catalog_avg_rating": 0,
+            "explore_score": 0,
+            "prediction": 0,
+            "nqd": 0,
+            "rank_new": 0,
+            "lt_nqd_supplier": 0,
+            "nqd_supplier": 0,
+            "lt_ratings_supplier": 0,
+            "lt_nqd_catalog": 0,
+            "3m_cnt_catalog": 0,
+            "nqd_catalog": 0,
+            "lt_ratings_catalog": 0,
+            "predict_catalog_nqd": 0,
+            "relaxed_group_id": 0,
+            "supplier_lt_count_rating": 0,
+            "supplier_lt_avg_rating": 0
+        }
+    },
+    "location": {
+        "name": "Example Location",
+        "type": "Office",
+        "googleMapLink": "https://maps.google.com/example",
+        "city": "San Francisco",
+        "state": "California",
+        "country": "United States"
+    }
+}
