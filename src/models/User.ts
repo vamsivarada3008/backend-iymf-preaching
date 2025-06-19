@@ -14,7 +14,6 @@ export interface IUser extends Document {
   mentees?: mongoose.Types.ObjectId[];
   attendance: {
     session: mongoose.Types.ObjectId;
-    date: Date;
     present: boolean;
   }[];
   sadhna: {

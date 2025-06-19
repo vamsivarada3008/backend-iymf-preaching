@@ -7,7 +7,7 @@ export interface ISession extends Document {
   batch?: mongoose.Types.ObjectId;
   conductor?: mongoose.Types.ObjectId;
   date: Date;
-  level:number;
+  attendees: mongoose.Types.ObjectId[];
 }
 
 const SessionSchema = new Schema({
@@ -17,7 +17,7 @@ const SessionSchema = new Schema({
   batch: { type: Schema.Types.ObjectId, ref: 'Batch' },
   conductor: { type: Schema.Types.ObjectId, ref: 'User' },
   date: { type: Date, required: true },
-  level: { type: Number, required: true, default: 1 } // Level of the session
+  attendees: { type: [Schema.Types.ObjectId], ref: 'User' }
 }, {
   timestamps: true
 });

@@ -15,7 +15,7 @@ router.post('/', asyncHandler(async (req: Request, res: Response) => {
 
     const insertedSessions = await Session.insertMany(sessionsData, { ordered: false });
     const populatedSessions = await Session.find({ _id: { $in: insertedSessions.map(s => s._id) } })
-        .populate(['center', 'batch', 'conductor']);
+        .populate(['center', 'batch', 'conductor', 'attendees']);
 
     res.status(201).json(populatedSessions);
 }));
@@ -40,7 +40,7 @@ router.get('/', asyncHandler(async (req: Request, res: Response) => {
     }
 
     const sessions = await Session.find(query)
-        .populate(['center', 'batch', 'conductor'])
+        .populate(['center', 'batch', 'conductor', 'attendees'])
         .sort({ date: -1, createdAt: -1 });
     
     res.json(sessions);
@@ -53,7 +53,7 @@ router.get('/:id', asyncHandler(async (req: Request, res: Response) => {
     }
 
     const session = await Session.findById(req.params.id)
-        .populate(['center', 'batch', 'conductor']);
+        .populate(['center', 'batch', 'conductor', 'attendees']);
     
     if (!session) {
         return res.status(404).json({ error: 'Session not found' });
@@ -72,7 +72,7 @@ router.put('/:id', asyncHandler(async (req: Request, res: Response) => {
         req.params.id,
         req.body,
         { new: true, runValidators: true }
-    ).populate(['center', 'batch', 'conductor']);
+    ).populate(['center', 'batch', 'conductor', 'attendees']);
     
     if (!updated) {
         return res.status(404).json({ error: 'Session not found' });
